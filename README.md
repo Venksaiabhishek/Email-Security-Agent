@@ -10,6 +10,38 @@ Here’s an example chat session with the agents:
 ![Conversation Screenshot](conversation_snapshot.png)
 
 ---
+### Event Flow – Page 1
+
+![Event Flow Page 1](./event_flow_page1.png)
+
+This event flow shows how the **Email Security Agent system** is structured:
+
+- **SequentialAgent Framework** is used for:
+  - **GreetingAgent** → Handles user greetings and routes input.
+  - **ClassifierAgent** → Coordinates the parallel checks.
+  - **ExplainerAgent** → Summarizes the classification process and results.
+  - **AdvisorAgent** → Provides final security recommendations to the user.
+
+- **ParallelAgent Framework** is used for:
+  - **PhishingEmailDetectorAgent** → Detects phishing emails.
+  - **AttachmentCheckerAgent** → Analyzes file attachments.
+  - **LinkCheckerAgent** → Inspects links/URLs.
+
+- **Function Tool: `classify_email`**
+  - Tools are created by you and tailored to your application.
+  - Functions/Methods are defined as standard synchronous functions (e.g., Python `def`) in the code.
+  - Here, `classify_email` is the function tool used to trigger email classification.
+
+- **Model Files Used**
+  - For the **PhishingEmailDetectorAgent**, I integrated models from my earlier project:  
+    - `logistic_regression.joblib`  
+    - `tfidf_vectorizer.joblib`  
+  - These were imported directly from my GitHub repository:  
+    [Phishing-Email-Detecting](https://github.com/Venksaiabhishek/Phishing-Email-Detecting)
+
+This design ensures that:
+- Initial interaction and summary steps follow a **sequential pipeline**.  
+- Heavy security analysis tasks (phishing, attachments, links) run **in parallel** for efficiency.  
 
 ## 📑 Event Flow Diagram
 The detailed session event flow is available as a PDF:  
@@ -47,3 +79,4 @@ Or view it inline below 👇
 
 ### Page 10
 ![Event Flow Page 10](./event_flow_page10.png)
+
