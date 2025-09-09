@@ -1,0 +1,453 @@
+{
+  "id": "fb2d1d2e-fee9-45dd-bcd6-3b7fb80256b8",
+  "app_name": "subagents",
+  "user_id": "user",
+  "state": {
+    "link_result": "```json\n[\n  {\n    \"url\": \"http://secure-update-login.com/verify\",\n    \"status\": \"DANGEROUS\",\n    \"reason\": \"Non-HTTPS link and suspicious domain.\"\n  }\n]\n```",
+    "attachment_result": "```json\n[\n  {\n    \"filename\": \"Account_Verification_Form.exe\",\n    \"status\": \"DANGEROUS\",\n    \"reason\": \"Executable file (.exe) can contain malicious code.\"\n  }\n]\n```\n",
+    "phishing_result": "PHISHING\n",
+    "explanation": "This email is classified as phishing due to the dangerous link and attachment it contains. The link uses a non-secure \"http\" connection and a suspicious domain, raising security concerns. The attachment, named \"Account_Verification_Form.exe\", is also dangerous because \".exe\" files can execute malicious code on your computer. Avoid clicking the link or downloading the attachment to protect your system.\n",
+    "advice": "This email is a phishing attempt and contains dangerous items. Do NOT click the link, open the attachment, or reply to this email. Report it as phishing and then delete it immediately.\n"
+  },
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocation_id": "e-0fec321a-daf9-4a1a-ba74-4246b3b2554c",
+      "author": "user",
+      "actions": {
+        "state_delta": {},
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "id": "Y8NicUCt",
+      "timestamp": 1757404803.386782
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hello! If you provide any email text, attachment names, or links, other agents will analyze it and tell you:\n  - Whether the email is PHISHING or LEGITIMATE\n  - Whether attachments are SAFE, SUSPICIOUS, or DANGEROUS\n  - Whether links are SAFE, SUSPICIOUS, or DANGEROUS\n"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-0fec321a-daf9-4a1a-ba74-4246b3b2554c",
+      "author": "GreetingAgent",
+      "actions": {
+        "state_delta": {},
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "id": "OLpsmhxr",
+      "timestamp": 1757404803.387857
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": ""
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-0fec321a-daf9-4a1a-ba74-4246b3b2554c",
+      "author": "LinkCheckerAgent",
+      "actions": {
+        "state_delta": {
+          "link_result": ""
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "branch": "ClassifierAgent.LinkCheckerAgent",
+      "id": "c6FV5rjp",
+      "timestamp": 1757404806.053147
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": ""
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-0fec321a-daf9-4a1a-ba74-4246b3b2554c",
+      "author": "AttachmentCheckerAgent",
+      "actions": {
+        "state_delta": {
+          "attachment_result": ""
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "branch": "ClassifierAgent.AttachmentCheckerAgent",
+      "id": "OBlw5JQR",
+      "timestamp": 1757404806.033852
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": ""
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-0fec321a-daf9-4a1a-ba74-4246b3b2554c",
+      "author": "PhishingEmailDetectorAgent",
+      "actions": {
+        "state_delta": {
+          "phishing_result": ""
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "branch": "ClassifierAgent.PhishingEmailDetectorAgent",
+      "id": "Ono8YLVs",
+      "timestamp": 1757404806.006764
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": ""
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-0fec321a-daf9-4a1a-ba74-4246b3b2554c",
+      "author": "ExplainerAgent",
+      "actions": {
+        "state_delta": {
+          "explanation": ""
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "id": "y472fWzu",
+      "timestamp": 1757404806.949013
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": ""
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-0fec321a-daf9-4a1a-ba74-4246b3b2554c",
+      "author": "AdvisorAgent",
+      "actions": {
+        "state_delta": {
+          "advice": ""
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "id": "D2zxsmRB",
+      "timestamp": 1757404807.957817
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "This is the mail I got:Subject: Urgent - Verify Your Account Immediately Dear User, We noticed unusual login activity on your account. For your security, you must verify your details immediately. Failure to do so will result in your account being suspended. Please click the link below to verify your account: http://secure-update-login.com/verify. Attached is a file (Account_Verification_Form.exe) that you must fill out and send back within 24 hours. Thank you for your prompt action, Security Team"
+          }
+        ],
+        "role": "user"
+      },
+      "invocation_id": "e-228bb301-5224-4148-8cd9-5d1a2f44bc9e",
+      "author": "user",
+      "actions": {
+        "state_delta": {},
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "id": "1huar0XG",
+      "timestamp": 1757404835.074877
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Okay, I'll pass this email content and attachment name to the next agents for analysis. They will determine if the email is phishing or legitimate and whether the attachment and link are safe, suspicious, or dangerous.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-228bb301-5224-4148-8cd9-5d1a2f44bc9e",
+      "author": "GreetingAgent",
+      "actions": {
+        "state_delta": {},
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "id": "y3V0vFDR",
+      "timestamp": 1757404835.078468
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "PHISHING\n"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-228bb301-5224-4148-8cd9-5d1a2f44bc9e",
+      "author": "PhishingEmailDetectorAgent",
+      "actions": {
+        "state_delta": {
+          "phishing_result": "PHISHING\n"
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "branch": "ClassifierAgent.PhishingEmailDetectorAgent",
+      "id": "wQYYe17N",
+      "timestamp": 1757404837.539338
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n[\n  {\n    \"url\": \"http://secure-update-login.com/verify\",\n    \"status\": \"DANGEROUS\",\n    \"reason\": \"Non-HTTPS link and suspicious domain.\"\n  }\n]\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-228bb301-5224-4148-8cd9-5d1a2f44bc9e",
+      "author": "LinkCheckerAgent",
+      "actions": {
+        "state_delta": {
+          "link_result": "```json\n[\n  {\n    \"url\": \"http://secure-update-login.com/verify\",\n    \"status\": \"DANGEROUS\",\n    \"reason\": \"Non-HTTPS link and suspicious domain.\"\n  }\n]\n```"
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "branch": "ClassifierAgent.LinkCheckerAgent",
+      "id": "8UWX1FmB",
+      "timestamp": 1757404837.583484
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n[\n  {\n    \"filename\": \"Account_Verification_Form.exe\",\n    \"status\": \"DANGEROUS\",\n    \"reason\": \"Executable file (.exe) can contain malicious code.\"\n  }\n]\n```\n"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-228bb301-5224-4148-8cd9-5d1a2f44bc9e",
+      "author": "AttachmentCheckerAgent",
+      "actions": {
+        "state_delta": {
+          "attachment_result": "```json\n[\n  {\n    \"filename\": \"Account_Verification_Form.exe\",\n    \"status\": \"DANGEROUS\",\n    \"reason\": \"Executable file (.exe) can contain malicious code.\"\n  }\n]\n```\n"
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "branch": "ClassifierAgent.AttachmentCheckerAgent",
+      "id": "ivs8zand",
+      "timestamp": 1757404837.56355
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "This email has been flagged as phishing. The included link is dangerous because it is not secure (non-HTTPS) and uses a suspicious domain. Furthermore, the attachment \"Account_Verification_Form.exe\" is marked as dangerous since executable files can contain malicious code. It is highly recommended not to click the link or download the attachment.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-228bb301-5224-4148-8cd9-5d1a2f44bc9e",
+      "author": "ExplainerAgent",
+      "actions": {
+        "state_delta": {
+          "explanation": "This email has been flagged as phishing. The included link is dangerous because it is not secure (non-HTTPS) and uses a suspicious domain. Furthermore, the attachment \"Account_Verification_Form.exe\" is marked as dangerous since executable files can contain malicious code. It is highly recommended not to click the link or download the attachment.\n"
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "id": "AGDMGj99",
+      "timestamp": 1757404838.926155
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "This email is a phishing attempt and contains dangerous elements. Do NOT click the link, open the attachment, or reply to this email. Report it as phishing and then delete it immediately.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-228bb301-5224-4148-8cd9-5d1a2f44bc9e",
+      "author": "AdvisorAgent",
+      "actions": {
+        "state_delta": {
+          "advice": "This email is a phishing attempt and contains dangerous elements. Do NOT click the link, open the attachment, or reply to this email. Report it as phishing and then delete it immediately.\n"
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "id": "kUmAP4Ro",
+      "timestamp": 1757404841.553745
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "This is the mail I got:Subject: Urgent - Verify Your Account Immediately Dear User, We noticed unusual login activity on your account. For your security, you must verify your details immediately. Failure to do so will result in your account being suspended. Please click the link below to verify your account: http://secure-update-login.com/verify. Attached is a file (Account_Verification_Form.exe) that you must fill out and send back within 24 hours. Thank you for your prompt action, Security Team"
+          }
+        ],
+        "role": "user"
+      },
+      "invocation_id": "e-b7934ea4-f361-4335-a56f-1f41fb73cc01",
+      "author": "user",
+      "actions": {
+        "state_delta": {},
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "id": "hYwgzHP0",
+      "timestamp": 1757404874.610594
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Okay, I'll pass this email content and attachment name to the next agents for analysis. They will determine if the email is phishing or legitimate and whether the attachment and link are safe, suspicious, or dangerous.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-b7934ea4-f361-4335-a56f-1f41fb73cc01",
+      "author": "GreetingAgent",
+      "actions": {
+        "state_delta": {},
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "id": "k56HwoT7",
+      "timestamp": 1757404874.612068
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "PHISHING\n"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-b7934ea4-f361-4335-a56f-1f41fb73cc01",
+      "author": "PhishingEmailDetectorAgent",
+      "actions": {
+        "state_delta": {
+          "phishing_result": "PHISHING\n"
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "branch": "ClassifierAgent.PhishingEmailDetectorAgent",
+      "id": "q6aKA3AU",
+      "timestamp": 1757404877.017855
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n[\n  {\n    \"url\": \"http://secure-update-login.com/verify\",\n    \"status\": \"DANGEROUS\",\n    \"reason\": \"Non-HTTPS link and suspicious domain.\"\n  }\n]\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-b7934ea4-f361-4335-a56f-1f41fb73cc01",
+      "author": "LinkCheckerAgent",
+      "actions": {
+        "state_delta": {
+          "link_result": "```json\n[\n  {\n    \"url\": \"http://secure-update-login.com/verify\",\n    \"status\": \"DANGEROUS\",\n    \"reason\": \"Non-HTTPS link and suspicious domain.\"\n  }\n]\n```"
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "branch": "ClassifierAgent.LinkCheckerAgent",
+      "id": "Dv6hbQmb",
+      "timestamp": 1757404877.064865
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n[\n  {\n    \"filename\": \"Account_Verification_Form.exe\",\n    \"status\": \"DANGEROUS\",\n    \"reason\": \"Executable file (.exe) can contain malicious code.\"\n  }\n]\n```\n"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-b7934ea4-f361-4335-a56f-1f41fb73cc01",
+      "author": "AttachmentCheckerAgent",
+      "actions": {
+        "state_delta": {
+          "attachment_result": "```json\n[\n  {\n    \"filename\": \"Account_Verification_Form.exe\",\n    \"status\": \"DANGEROUS\",\n    \"reason\": \"Executable file (.exe) can contain malicious code.\"\n  }\n]\n```\n"
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "branch": "ClassifierAgent.AttachmentCheckerAgent",
+      "id": "rQDXCre6",
+      "timestamp": 1757404877.043733
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "This email is classified as phishing due to the dangerous link and attachment it contains. The link uses a non-secure \"http\" connection and a suspicious domain, raising security concerns. The attachment, named \"Account_Verification_Form.exe\", is also dangerous because \".exe\" files can execute malicious code on your computer. Avoid clicking the link or downloading the attachment to protect your system.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-b7934ea4-f361-4335-a56f-1f41fb73cc01",
+      "author": "ExplainerAgent",
+      "actions": {
+        "state_delta": {
+          "explanation": "This email is classified as phishing due to the dangerous link and attachment it contains. The link uses a non-secure \"http\" connection and a suspicious domain, raising security concerns. The attachment, named \"Account_Verification_Form.exe\", is also dangerous because \".exe\" files can execute malicious code on your computer. Avoid clicking the link or downloading the attachment to protect your system.\n"
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "id": "rY2zLGSk",
+      "timestamp": 1757404879.529705
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "This email is a phishing attempt and contains dangerous items. Do NOT click the link, open the attachment, or reply to this email. Report it as phishing and then delete it immediately.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "invocation_id": "e-b7934ea4-f361-4335-a56f-1f41fb73cc01",
+      "author": "AdvisorAgent",
+      "actions": {
+        "state_delta": {
+          "advice": "This email is a phishing attempt and contains dangerous items. Do NOT click the link, open the attachment, or reply to this email. Report it as phishing and then delete it immediately.\n"
+        },
+        "artifact_delta": {},
+        "requested_auth_configs": {}
+      },
+      "id": "hBjt9WzU",
+      "timestamp": 1757404882.406301
+    }
+  ],
+  "last_update_time": 1757404882.406301
+}
